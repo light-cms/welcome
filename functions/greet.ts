@@ -43,7 +43,7 @@ async function greetNewUsers() {
 				from: process.env.SMTP_MAIL!,
 				to: u.email,
 				subject: "Welcome to LightCMS!",
-				text: `Hi ${u.name || "there"},\n\nThanks for using LightCMS! We're glad to have you. Happy writing!\n\n— The LightCMS team`,
+				text: `Hi ${u.name || "there"},\n\nThanks for using LightCMS! We're glad to have you. Happy writing!\n If you have any suggestions or grievances, please let us know <a href="https://app.youform.com/forms/smwrhikc">form</a>.\n\n— The LightCMS team`,
 			});
 			await pool.query(
 				`INSERT INTO greeted_users (user_id) VALUES ($1) ON CONFLICT (user_id) DO NOTHING`,
