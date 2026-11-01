@@ -1,0 +1,4 @@
+[tools]
+bun = "latest"
+neonctl = "latest"
+node = "latest"
